@@ -143,9 +143,7 @@ func CollectionResources(targetUrl string, parame proxyParamet)[]proxyResult  {
 parame的参数对应着表格标题的下标（从1开始）
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200406180759810.png)
 
-#### **扩展：设置代理**  
-既然都采集到IP了，何不添加个请求代理呢？
-话不多说，上代码
+设置代理
 
 ```go
 func StartRequestProxy(address string, proxyIpInfo [] proxyResult) string {
