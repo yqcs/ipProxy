@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+	"strings"
 )
 
 func main() {
@@ -17,7 +18,7 @@ func main() {
 	fmt.Println(">>>>开始筛选IP")
 	for _, proxyInfo := range result {
 		fmt.Println(">>IP:" + proxyInfo.Ip)
-		url := proxyInfo.Agreement + "://" + proxyInfo.Ip + ":" + strconv.Itoa(proxyInfo.Port)
+		url := strings.ToLower(proxyInfo.Agreement) + "://" + proxyInfo.Ip + ":" + strconv.Itoa(proxyInfo.Port)
 		timeout := time.Duration(3 * time.Second)
 		//设置3秒超时
 		client := http.Client{
